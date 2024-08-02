@@ -41,6 +41,7 @@ dependencies:
   iconsax: ^0.0.8
   flutter_svg: ^2.0.10+1
   card_swiper: ^3.0.1
+  smooth_page_indicator: ^1.2.0+3
 
 dev_dependencies:
   flutter_test:
