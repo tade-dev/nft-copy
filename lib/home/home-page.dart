@@ -501,7 +501,10 @@ class _HomeViewState extends State<HomeView> {
                                       ),
                                       Text(
                                         _trending[index]["punk"],
-                                        style: const TextStyle(fontSize: 12),
+                                        style: const TextStyle(
+                                            fontSize: 12,
+                                            fontFamily: "GeistMed",
+                                            color: Color(0xff555555)),
                                       )
                                     ],
                                   ),
@@ -510,7 +513,35 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                         ),
-                      )
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "Categories",
+                              style: TextStyle(color: Colors.black, fontSize: 20),
+                            ),
+                            Container(
+                                height: 36,
+                                width: 60,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    border: Border.all(
+                                        color: Colors.black.withOpacity(0.2))),
+                                child: Center(
+                                    child: SvgPicture.asset(
+                                        "assets/images/arrow_up.svg"))),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
                     ],
                   ),
                 ),
