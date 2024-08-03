@@ -65,17 +65,12 @@ class _HomeViewState extends State<HomeView> {
       "price": "24,565.65"
     },
     {
-      "images": "assets/images/ape-2.png",
-      "punk": "Punk #5822",
-      "price": "565.65"
-    },
-    {
       "images": "assets/images/lion-gum.jpeg",
       "punk": "Punk #5822",
       "price": "565.65"
     },
     {
-      "images": "assets/images/lion-angel.png",
+      "images": "assets/images/lion-angel.jpeg",
       "punk": "Punk #5822",
       "price": "10,565.65"
     },
@@ -93,6 +88,51 @@ class _HomeViewState extends State<HomeView> {
       "images": "assets/images/orange.png",
       "punk": "Punk #5822",
       "price": "2,565.65"
+    },
+  ];
+
+  final List<Map<String, dynamic>> _categories = [
+    {
+      "categoryName": "Art",
+      "image": "assets/images/crypto-punk.jpeg",
+      "punk": "Punk #5822",
+      "price": "2,565.65",
+      "bid": 20
+    },
+    {
+      "categoryName": "Art",
+      "image": "assets/images/lion-gum.jpeg",
+      "punk": "Punk #5822",
+      "price": "565.65",
+      "bid": 20
+    },
+    {
+      "categoryName": "Music",
+      "image": "assets/images/blue-green.png",
+      "punk": "Punk #5822",
+      "price": "565.65",
+      "bid": 20
+    },
+    {
+      "categoryName": "Virtual Reality",
+      "image": "assets/images/orange.png",
+      "punk": "Punk #5822",
+      "price": "565.65",
+      "bid": 20
+    },
+    {
+      "categoryName": "Collectibles",
+      "image": "assets/images/lion-angel.jpeg",
+      "punk": "Punk #5822",
+      "price": "2,565.65",
+      "bid": 20
+    },
+    {
+      "categoryName": "Virtual Reality",
+      "image": "assets/images/lion-gay.jpeg",
+      "punk": "Punk #5822",
+      "price": "2,565.65",
+      "bid": 20
     },
   ];
 
@@ -524,7 +564,8 @@ class _HomeViewState extends State<HomeView> {
                           children: [
                             const Text(
                               "Categories",
-                              style: TextStyle(color: Colors.black, fontSize: 20),
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 20),
                             ),
                             Container(
                                 height: 36,
@@ -537,6 +578,245 @@ class _HomeViewState extends State<HomeView> {
                                     child: SvgPicture.asset(
                                         "assets/images/arrow_up.svg"))),
                           ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20),
+                          child: Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: const Color(0xffB11E1E),
+                                        width: 0.5),
+                                    borderRadius: BorderRadius.circular(24)),
+                                child: const Center(
+                                  child: Text(
+                                    "All",
+                                    style: TextStyle(
+                                      color: const Color(0xffB11E1E),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.black.withOpacity(0.2),
+                                        width: 0.5),
+                                    borderRadius: BorderRadius.circular(24)),
+                                child: const Center(
+                                  child: Text(
+                                    "Art",
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.black.withOpacity(0.2),
+                                        width: 0.5),
+                                    borderRadius: BorderRadius.circular(24)),
+                                child: const Center(
+                                  child: Text(
+                                    "Collectibles",
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.black.withOpacity(0.2),
+                                        width: 0.5),
+                                    borderRadius: BorderRadius.circular(24)),
+                                child: const Center(
+                                  child: Text(
+                                    "Music",
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15, vertical: 10),
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.black.withOpacity(0.2),
+                                        width: 0.5),
+                                    borderRadius: BorderRadius.circular(24)),
+                                child: const Center(
+                                  child: Text(
+                                    "Virtual Real Estate",
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          children: List.generate(_categories.length, (index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(bottom: 15),
+                              child: Column(
+                                children: [
+                                  Stack(
+                                    children: [
+                                      Container(
+                                        height: 200,
+                                        width: double.infinity,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    _categories[index]
+                                                        ["image"]),
+                                                fit: BoxFit.cover)),
+                                      ),
+                                      Positioned(
+                                        right: 0,
+                                        child: Container(
+                                          margin: const EdgeInsets.all(20),
+                                          padding: const EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(30),
+                                          ),
+                                          child: const Center(
+                                            child: Text(
+                                              "20 Bids",
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 12),
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          RichText(
+                                            text: TextSpan(
+                                                text: _categories[index]
+                                                        ["price"]
+                                                    .toString()
+                                                    .split(".")
+                                                    .first,
+                                                style: const TextStyle(
+                                                    color: Colors.black,
+                                                    fontFamily: "Geist",
+                                                    fontSize: 20),
+                                                children: [
+                                                  TextSpan(
+                                                    text:
+                                                        ".${_categories[index]["price"].toString().split(".").last}",
+                                                    style: const TextStyle(
+                                                        color:
+                                                            Color(0xff909090),
+                                                        fontFamily: "Geist",
+                                                        fontSize: 20),
+                                                  ),
+                                                  const TextSpan(
+                                                    text: " ETH",
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontFamily: "Geist",
+                                                        fontSize: 20),
+                                                  ),
+                                                ]),
+                                          ),
+                                          const SizedBox(
+                                            height: 3,
+                                          ),
+                                          Text(
+                                            _trending[index]["punk"],
+                                            style: const TextStyle(
+                                                fontSize: 12,
+                                                fontFamily: "GeistMed",
+                                                color: Color(0xff555555)),
+                                          )
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          SvgPicture.asset(
+                                              "assets/images/Hourglass.svg"),
+                                          const SizedBox(
+                                            width: 3,
+                                          ),
+                                          RichText(
+                                            text: const TextSpan(
+                                                text: "Ends in",
+                                                style: TextStyle(
+                                                    color: Color(0xff555555),
+                                                    fontFamily: "Geist",
+                                                    fontSize: 12),
+                                                children: [
+                                                  TextSpan(
+                                                    text: " 22h 42m 27s",
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontFamily: "Geist",
+                                                        fontSize: 12),
+                                                  ),
+                                                ]),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            );
+                          }),
                         ),
                       ),
                       const SizedBox(
